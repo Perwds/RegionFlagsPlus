@@ -1,0 +1,38 @@
+# RegionFlagsPlus configuration
+# Colour codes use '&' (e.g. &c = red). Placeholders are listed per message.
+
+# If true, players with WorldGuard region bypass (ops by default, toggle with /rg bypass)
+# ignore the RESTRICTION flags (blocked items, cooldowns, teleport-only, block flags,
+# entry-permission, region-max-players).
+# Set to false while testing as an op.
+respect-worldguard-bypass: true
+
+region-effects:
+  # Show swirly particles for region potion effects
+  particles: false
+  # Show the effect icon in the top-right of the screen
+  icon: true
+
+luckperms:
+  # Priority of the temporary prefix/suffix. Higher wins over group prefixes.
+  priority: 10000
+
+teleport-only:
+  # Count ender pearls / chorus fruit as "walking" out (i.e. block them).
+  block-ender-pearls: true
+  block-chorus-fruit: true
+
+messages:
+  exit-teleport-only: "&cYou can only leave this area by teleporting."
+  entry-teleport-only: "&cYou can only enter this area by teleporting."
+  item-blocked: "&cYou can't use &e%item% &chere."
+  # %item%, %time%
+  item-cooldown: "&e%item% &cis on cooldown for &e%time%s&c."
+  block-place-denied: "&cYou can't place &e%block% &chere."
+  block-break-denied: "&cYou can't break &e%block% &chere."
+  block-use-denied: "&cYou can't use &e%block% &chere."
+  fly-denied: "&cFlying is disabled here."
+  # %region%
+  entry-permission: "&cYou're not allowed in &e%region%&c."
+  # %region%, %max%
+  region-full: "&e%region% &cis full (&e%max%&c players max)."

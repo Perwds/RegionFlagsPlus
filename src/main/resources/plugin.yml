@@ -1,0 +1,44 @@
+name: RegionFlagsPlus
+version: '${version}'
+main: dev.regionflags.RegionFlagsPlus
+api-version: '1.21'
+description: Extra WorldGuard flags - region effects, teleport-only exits, LuckPerms prefixes, region permissions, entry permissions, player caps, sounds, item blocking and cooldowns.
+authors: [Perwd]
+depend: [WorldGuard]
+softdepend: [LuckPerms]
+
+commands:
+  regionflags:
+    description: Manage RegionFlagsPlus flags (add/remove values with #hand, #hotbar, ...)
+    aliases: [wgf, rfp]
+    permission: regionflags.admin
+    usage: /<command> help
+
+permissions:
+  regionflags.admin:
+    description: Use /wgf to edit flags
+    default: op
+  regionflags.bypass.*:
+    description: Bypass every restriction flag from RegionFlagsPlus
+    default: false
+    children:
+      regionflags.bypass.exit-teleport-only: true
+      regionflags.bypass.entry-teleport-only: true
+      regionflags.bypass.blocked-items: true
+      regionflags.bypass.item-cooldowns: true
+      regionflags.bypass.deny-block-place: true
+      regionflags.bypass.deny-block-break: true
+      regionflags.bypass.deny-block-use: true
+      regionflags.bypass.region-fly: true
+      regionflags.bypass.entry-permission: true
+      regionflags.bypass.region-max-players: true
+  regionflags.bypass.exit-teleport-only: {default: false}
+  regionflags.bypass.entry-teleport-only: {default: false}
+  regionflags.bypass.blocked-items: {default: false}
+  regionflags.bypass.item-cooldowns: {default: false}
+  regionflags.bypass.deny-block-place: {default: false}
+  regionflags.bypass.deny-block-break: {default: false}
+  regionflags.bypass.deny-block-use: {default: false}
+  regionflags.bypass.region-fly: {default: false}
+  regionflags.bypass.entry-permission: {default: false}
+  regionflags.bypass.region-max-players: {default: false}
